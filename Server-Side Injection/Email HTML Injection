@@ -1,0 +1,23 @@
+Summary:
+Email HTML injection, also known as email template injection or email code injection, is a type of security vulnerability that occurs when an application fails to properly validate and sanitize user-generated content before including it in an email's HTML body. This vulnerability allows an attacker to inject arbitrary HTML or JavaScript code into the email, which can be executed when the recipient opens the email.
+
+Description:
+The vulnerability exists in the way your application processes user-generated content when composing and sending emails. Insufficient validation and sanitization of email input fields allow an attacker to inject arbitrary HTML code into the email body, thereby potentially executing malicious scripts in the context of the recipient's email client.
+
+Steps to Reproduce:
+1) Register an account on the website
+2) Enter Payload in First & Last Name Fields
+"><h1 style="color:red">Test</h1>
+3) Now Visit the website and click on the invite Team Option
+4) Enter the email address of the user you want to invite and click on send button
+5) Now open the received Email and see that the Payload has been rendered into the email without proper sanitization.
+
+Proof of Concept (PoC):
+Please find attached video and screenshots.
+
+Impact:        
+Input is unsanitized and vulnerable to html injection which may lead to phishing attack. As HTML injection works in email, attacker may trick the victim to click on hyperlinks and redirect them to malicious site.
+The impact would depend upon the type of application or the type of business the organization is involved with.   
+
+Remediation:
+To prevent email HTML injection vulnerabilities, applications should implement proper input validation and output encoding for user-generated content before including it in email templates. Additionally, using secure email templates or frameworks that automatically sanitize user-generated content can help reduce the risk of such vulnerabilities.
