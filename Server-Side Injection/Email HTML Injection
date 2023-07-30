@@ -4,6 +4,10 @@ Email HTML injection, also known as email template injection or email code injec
 Description:
 The vulnerability exists in the way your application processes user-generated content when composing and sending emails. Insufficient validation and sanitization of email input fields allow an attacker to inject arbitrary HTML code into the email body, thereby potentially executing malicious scripts in the context of the recipient's email client.
 
+Severity:           CRITICAL/HIGH/MEDIUM/LOW 
+Vulnerable URL:     https://example.com
+Payload:            "><h1 style="color:red">Test</h1>
+
 Steps to Reproduce:
 1) Register an account on the website
 2) Enter Payload in First & Last Name Fields
